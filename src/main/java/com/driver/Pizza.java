@@ -8,25 +8,29 @@ public class Pizza {
 
     private int price;
     private Boolean isVeg;
-    private String bill;
+    private String bill ;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
-        extraCheese = true;
-        extraToppings = true;
-        bag = true;
+        this.extraCheese = true;
+        this.extraToppings = true;
+        this.bag = true;
+        this.bill = "";
         if(this.isVeg){
-            price = 300;
-            System.out.println("Base Price Of The Pizza: "+price);
+//            System.out.println("are you running");
+            this.price = 300;
+
         }
         else{
-            price = 400;
-            System.out.println("Base Price Of The Pizza: "+price);
+            this.price = 400;
+
+//            System.out.println("are you not running");
         }
     }
 
     public int getPrice(){
 //        System.out.println("Base Price Of The Pizza: "+price);
+//        System.out.println("get price is working");
         return this.price;
     }
 
@@ -34,8 +38,8 @@ public class Pizza {
         // your code goes here
         if(extraCheese){
             price += 80;
-            System.out.println("Extra Cheese Added: 80");
             extraCheese  = false;
+//            System.out.println("extra cheese is added");
         }
 
     }
@@ -43,8 +47,10 @@ public class Pizza {
     public void addExtraToppings(){
         // your code goes here
         if(extraToppings){
+            if(isVeg)
             price += 70;
-            System.out.println("Extra Toppings Added: 120");
+            else price += 120;
+//            System.out.println("extra topping added");
             extraToppings = false;
         }
 
@@ -54,7 +60,7 @@ public class Pizza {
         // your code goes here
         if(bag){
             price += 20;
-            System.out.println("Paperbag Added: 20");
+//            System.out.println("Carray bag added");
             bag = false;
         }
 
@@ -62,7 +68,13 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        bill = "total bill: "+price;
+//        System.out.println("now billl is:"+bill);
+        if(isVeg) bill += "Base Price Of The Pizza: "+"300"+"\n";
+        if(!isVeg)  bill+= "Base Price Of The Pizza: "+"400"+"\n";
+        if(!extraCheese)  bill += "Extra Cheese Added: 80"+"\n";
+        if(!extraToppings) bill += "Extra Toppings Added: 120"+"\n";
+        if(!bag) bill += "Paperbag Added: 20"+"\n";
+        bill += "total bill: "+price;
         return this.bill;
     }
 }

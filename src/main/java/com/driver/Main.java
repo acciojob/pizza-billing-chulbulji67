@@ -4,14 +4,14 @@ public class Main {
 
   public static void main(String[] args) {
     DeluxePizza dp = new DeluxePizza(true);
-//    System.out.println(dp.getPrice());
+    System.out.println(dp.getPrice());
     dp.getPrice();
     dp.addTakeaway();
     dp.addExtraCheese();
     dp.addTakeaway();
     System.out.println(dp.getBill());
 
-    Pizza p = new Pizza(true);
+    Pizza p = new Pizza(false);
     p.addExtraCheese();
     p.addExtraToppings();
     p.addTakeaway();
