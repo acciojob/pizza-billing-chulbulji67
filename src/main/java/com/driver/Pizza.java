@@ -74,7 +74,7 @@ public class Pizza {
         if(!extraCheese)  bill += "Extra Cheese Added: 80"+"\n";
         if(!extraToppings) bill += "Extra Toppings Added: 120"+"\n";
         if(!bag) bill += "Paperbag Added: 20"+"\n";
-        bill += "total bill: "+price;
+        bill += "Total price: "+price;
         return this.bill;
     }
 }
